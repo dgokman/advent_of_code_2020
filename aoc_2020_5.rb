@@ -42,8 +42,8 @@ A.split("\n").each do |str|
   hash[row] << column
 end
 
-seat = hash.select {|k,v| v.sort != (0..7).to_a}
-p seat.first.to_a.first * 8 + ((0..7).to_a - seat.first.to_a.last).first
+row, columns = hash.find {|k,v| v.sort != (0..7).to_a}
+p row * 8 + ((0..7).to_a - columns).first
 
 
 
