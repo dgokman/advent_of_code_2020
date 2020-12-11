@@ -14,18 +14,13 @@ jolts << 0 << goal
 jolts.sort!
 hash = {}
 
-jolts.each do |a|
-  hash[a] ||= []
-  [1,2,3].each do |n|
-    hash[a] << a+n if jolts.include?(a+n)
-  end  
-end
-
 count_arr = []
 jolts.each do |n|
-  hash[n].each do |o|
-    count_arr[o] ||= 0
-    count_arr[o] += count_arr[n].to_i > 0 ? count_arr[n] : 1
+  for o in 1..3
+    if jolts.include?(n+o)
+      count_arr[n+o] ||= 0
+      count_arr[n+o] += count_arr[n].to_i > 0 ? count_arr[n] : 1
+    end  
   end
 end
 
