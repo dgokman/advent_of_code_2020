@@ -36,9 +36,7 @@ loop do
           new_field[i][j] = "L"
         end
       end
-      
       j += 1
-
     end
     i += 1
     j = 0
@@ -59,12 +57,10 @@ field = A.split("\n").map {|x| x.split("")}
 new_field = Marshal.load(Marshal.dump(field))
 old_count = 0
 loop do
-  i = 0
-  j = 0
-  while i < field.length
-    while j < field[i].length
-      x = i
-      y = j
+  x = 0
+  y = 0
+  while x < field.length
+    while y < field[x].length
       a,b,c,d,e,f,g,h = nil
       xx = 1
       yy = 1
@@ -110,12 +106,10 @@ loop do
           new_field[x][y] = "L"
         end
       end
-      
-      j += 1
-
+      y += 1
     end
-    i += 1
-    j = 0
+    x += 1
+    y = 0
   end  
 
   
