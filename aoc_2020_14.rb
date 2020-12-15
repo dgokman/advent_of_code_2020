@@ -33,8 +33,6 @@ p bits.compact.inject(:+)
 
 mask, addr, val = nil
 bits = {}
-sum = 0
-x = 0
 rules.each do |a|
   if a.include?("mask")
     mask = a.split(" = ").last
