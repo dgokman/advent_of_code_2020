@@ -18,8 +18,7 @@ def rules(n)
     @last[n] = @counter
     return 0
   else
-    idx = @last[n]
-    turns = @counter - idx
+    turns = @counter - @last[n]
     @last[n] = @counter
     @so_far << n  
     return turns
