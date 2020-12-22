@@ -13,7 +13,6 @@ def add_to_string(rules, arr)
     if @rules[rule.to_i].include?("a")
       if clon.any?
         clon.map! {|a| a + "a"}
-
       else
         clon << "a"
       end    
